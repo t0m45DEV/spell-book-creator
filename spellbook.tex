@@ -1,0 +1,101 @@
+%!TEX TS-program = lualatex
+
+% pdfx metadata
+\begin{filecontents*}{\jobname.xmpdata}
+    \Title{Spellbook}
+    \Language{en-US}
+    \Keywords{D&D 5e\sep Spellbook}
+\end{filecontents*}
+
+\documentclass[a4paper,USenglish,10pt]{scrartcl}
+\usepackage{babel,selnolig}
+\usepackage[a-3u]{pdfx}
+\usepackage[
+	protrusion={true,nocompatibility},
+	expansion=true,
+	tracking=true,
+	factor=1100,
+	stretch=10,
+	shrink=10,
+	babel,
+	final
+]{microtype}
+\usepackage{multicol}
+\usepackage{spells}
+
+\usepackage{fancyhdr}
+
+% font package, use lf for new-style number figures
+\usepackage[lf]{ebgaramond}
+
+\KOMAoptions{
+    twoside=on,
+    DIV=15, % textarea (see scrguide)
+    BCOR=15mm % gutter
+}
+\setlength{\columnsep}{7.5mm}
+
+\hypersetup{
+    % open pdf with bookmarks tab open
+    pdfpagemode=UseOutlines,
+    % open with page fit to width
+    pdfstartview=FitH
+}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\begin{multicols*}{2}
+
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{Cantrips}}
+\input{spells/0-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{1-th level spells}}
+\input{spells/1-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{2-th level spells}}
+\input{spells/2-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{3-th level spells}}
+\input{spells/3-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{4-th level spells}}
+\input{spells/4-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{5-th level spells}}
+\input{spells/5-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{6-th level spells}}
+\input{spells/6-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{7-th level spells}}
+\input{spells/7-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{8-th level spells}}
+\input{spells/8-th_spells}
+
+\newpage
+\fancyhead{} % clear all header fields
+\fancyhead[RO,RE]{\textbf{9-th level spells}}
+\input{spells/9-th_spells}
+
+\end{multicols*}
+\end{document}
