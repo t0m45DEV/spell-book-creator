@@ -29,12 +29,24 @@ if response.status_code == 200:
 
 	soup = BeautifulSoup(response.text, 'html.parser')
 	divs = soup.find_all('div', id=True)
+	
+	spell_list_file = open("spells_list.tex", "w")
 
 	for div in divs:
 		id_text = div['id']
 
 		if "wiki-tab-0" in id_text:
-		    print("== Found the table " + id_text[-1] + " ==")
+		    print("== Downloading the table " + id_text[-1] + " ==")
+		    
+		    spell_list_file.write("\\newpage\n")
+		    spell_list_file.write("\\fancyhead{}\n")
+		    
+		    if id_text[-1] == "0":
+		        spell_list_file.write("\\fancyhead[RO, RE]{\\textbf{Cantrips}}\n")
+		    else:
+		        spell_list_file.write("\\fancyhead[RO, RE]{\\textbf{" + id_text[-1] + "-th level spells}}\n")
+		    
+		    spell_list_file.write("\\input{spells/" + id_text[-1] + "-th_spells}\n\n")
 		    
 		    spells_file = open("spells/" + id_text[-1] + "-th_spells.tex", "w")
 		    
@@ -104,6 +116,7 @@ if response.status_code == 200:
 		            print(f"Error code: {response.status_code}")
 		            
 		    spells_file.close()
+	spell_list_file.close()
 
 else:
 	print("There was an error loading the wikidot page")
