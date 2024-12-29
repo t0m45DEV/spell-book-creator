@@ -100,9 +100,9 @@ if response.status_code == 200:
 		                    
 		                    spells_file.write("}\n")
 		                    
-		                    for i in range(3, len(spell_info)):
-		                        if (not "At Higher Levels." in spell_info[i].text) or (not "Spell Lists." in spell_info[i].text):
-		                            spells_file.write(spell_info[i].text + "\n")
+		                    for i in range(3, len(spell_info) - 1):
+		                        if not ("At Higher Levels" in spell_info[i].text):
+		                            spells_file.write(spell_info[i].text + "\\\\\n")
 		                    
 		                    last_paragraph = spell_info[-2].text
 		                    
