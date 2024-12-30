@@ -15,7 +15,17 @@ sources_reductions = {
     "Tasha's Cauldron of Everything" : "TCE",
     "Unearthed Arcana 66 - Fighter, Rogue, and Wizard" : "UA-66",
     "Guildmaster's Guide to Ravnica" : "GGR",
-    "Unearthed Arcana 7 - Modern Magic" : "UA-7"
+    "Unearthed Arcana 7 - Modern Magic" : "UA-7",
+    "Tasha's Cauldron of Everything/Sword Coast Adventurer's Guide" : "TCE/SCAG",
+    "Explorer's Guide to Wildemount" : "EGW",
+    "Unearthed Arcana 70 - Spells and Magic Tattoos" : "UA-70",
+    "Icewind Dale - Rime of the Frostmaiden" : "ID-RF",
+    "Spelljammer: Adventures in Space - Astral Adventurer's Guide" : "AS-ADG",
+    "Lost Laboratory of Kwalish" : "LLK",
+    "Unearthed Arcana 71 - Psionic Options Revisited" : "UA-71",
+    "Planescape - Adventures in the Multiverse" : "P-AM",
+    "Unearthed Arcana 11 - That Old Black Magic" : "UA-11",
+    "Critical Role (Twitter)" : "CR"
 }
 
 WIKIDOT_URL = "https://dnd5e.wikidot.com"
